@@ -1,0 +1,122 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		boolean testing = false;
+		boolean testing1 = false;
+		boolean testing2 = false;
+		boolean testing3 = false;
+		String pos = "";
+		String pos1 = "";
+		String pos2 = "";
+		String pos3 = "";
+		while(true)
+		{
+		testing = false;   
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please provide the first input");
+		pos = input.next();
+		for(int i=0; i<pos.length();i++)
+		{
+			if(!Character.isDigit(pos.charAt(i)))
+		         testing = true;
+		 }
+		
+		 if(testing == true)
+		 {
+		     System.out.print("Enter only numbers..   ");
+		     continue;
+		 }
+
+		 else
+		 {
+		     int num_0 = Integer.parseInt(pos);
+		     if (num_0 == 8 || num_0 == 9){
+		    	 while(true)
+		 		{
+		 		testing1 = false;   
+		 		System.out.println("Please provide the second input");
+		 		pos1 = input.next();
+		 		for(int i=0; i<pos1.length();i++)
+		 		{
+		 			if(!Character.isDigit(pos1.charAt(i)))
+		 		         testing1 = true;
+		 		}
+		 		if(testing1 == true)
+				{
+				     System.out.print("Enter only numbers..   ");
+				     continue;
+				}
+				 else
+				 {
+				     int num_1 = Integer.parseInt(pos1);
+			    	 while(true)
+				 		{
+				 		testing2 = false;   
+				 		System.out.println("Please provide the third input");
+				 		pos2 = input.next();
+				 		for(int i=0; i<pos2.length();i++)
+				 		{
+				 			if(!Character.isDigit(pos2.charAt(i)))
+				 		         testing2 = true;
+				 		}
+				 		if(testing2 == true)
+						{
+						     System.out.print("Enter only numbers..   ");
+						     continue;
+						}
+						 else
+						 {
+						     int num_2 = Integer.parseInt(pos2);
+							 if (num_1 == num_2) {
+								 while(true)
+							 		{
+							 		testing3 = false;   
+							 		System.out.println("Please provide the forth input");
+							 		pos3 = input.next();
+							 		for(int i=0; i<pos3.length();i++)
+							 		{
+							 			if(!Character.isDigit(pos3.charAt(i)))
+							 		         testing3 = true;
+							 		}
+							 		if(testing3 == true)
+									{
+									     System.out.print("Enter only numbers..   ");
+									     continue;
+									}
+									 else{
+									     int num_3 = Integer.parseInt(pos3);
+									     if (num_3 == 8 || num_3 == 9){
+									    	 correct();
+									    	 } 
+									     else {
+								            ignore();
+								            System.exit(0);
+									         }
+									    }
+							    }
+							 } else {
+								 ignore();
+								 System.exit(0);
+							 }
+							}
+						}
+					 }
+				}
+		     } else {
+		    	 ignore();
+		    	 System.exit(0);
+		     }
+		 }
+		}
+	}
+	
+	static void ignore() {
+	    System.out.println("ignore");
+	}
+	static void correct() {
+	    System.out.println("ignore");
+	}
+	
+}
+
+
